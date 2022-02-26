@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   public onToggleSidenav = () => { 
+    this.BtnLogin = "Logout"
   }
 
   ngOnInit(): void {
