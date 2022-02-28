@@ -10,7 +10,7 @@ import { AppInfoDialogComponent } from '../../app-info-dialog/app-info-dialog.co
 @Component({
   selector: 'app-scan',
   templateUrl: './scan.component.html',
-  styleUrls: ['./scan.component.sass']
+  styleUrls: ['./scan.component.scss']
 })
 
 
@@ -51,6 +51,7 @@ export class ScanComponent implements OnInit {
 
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
+    alert(resultString);
   }
 
   onDeviceSelectChange(selected: string) {

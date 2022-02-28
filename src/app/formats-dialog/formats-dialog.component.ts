@@ -7,7 +7,7 @@ import { formatNames, formatsAvailable } from '../barcode-formats';
 @Component({
   selector: 'app-formats-dialog',
   templateUrl: './formats-dialog.component.html',
-  styleUrls: ['./formats-dialog.component.sass']
+  styleUrls: ['./formats-dialog.component.scss']
 })
 export class FormatsDialogComponent {
 
