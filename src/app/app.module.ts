@@ -10,8 +10,17 @@ import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './Pages/home/home.component';
 import { ScanComponent } from './Pages/scan/scan.component';
 import { GenerateComponent } from './Pages/generate/generate.component';
-
-
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { FormatsDialogComponent } from './formats-dialog/formats-dialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { AppInfoDialogComponent } from './app-info-dialog/app-info-dialog.component';
+import { AppInfoComponent } from './app-info/app-info.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -19,15 +28,31 @@ import { GenerateComponent } from './Pages/generate/generate.component';
     NavbarComponent,
     HomeComponent,
     ScanComponent,
-    GenerateComponent
+    GenerateComponent,
+    FormatsDialogComponent,
+    AppInfoDialogComponent,
+    AppInfoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    MatMenuModule,
+    ZXingScannerModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatInputModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatListModule
+  ],exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
