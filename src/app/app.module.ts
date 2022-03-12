@@ -21,7 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { AppInfoDialogComponent } from './app-info-dialog/app-info-dialog.component';
 import { AppInfoComponent } from './app-info/app-info.component';
 import {MatMenuModule} from '@angular/material/menu';
-
+import { NgxFileDragDropModule } from 'ngx-file-drag-drop';
+import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,9 @@ import {MatMenuModule} from '@angular/material/menu';
     AppInfoComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    NgxFileDragDropModule,
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
