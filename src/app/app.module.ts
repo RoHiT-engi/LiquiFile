@@ -24,6 +24,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { NgxFileDragDropModule } from 'ngx-file-drag-drop';
 import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { TableGeneratorComponent } from './Pages/table-generator/table-generator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     FormatsDialogComponent,
     AppInfoDialogComponent,
     AppInfoComponent,
+    TableGeneratorComponent,
   ],
   imports: [
     BrowserAnimationsModule,

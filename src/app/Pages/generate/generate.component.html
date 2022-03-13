@@ -1,7 +1,17 @@
-<p>generate works!</p>
 <ngx-file-drag-drop
       [formControl]="fileControl"
       activeBorderColor="#3F51B5"
       (valueChanged)="onValueChange($event)"
+      [multiple]="multiple"
     >
     </ngx-file-drag-drop>
+    <ul>
+        <li *ngFor="let File of this.fileControl.value">
+          Name - {{File.name!=""?File.name:"File Removed"}} 
+          Size - {{File.size/1000000}} MB 
+          type - {{File.type}} 
+          lastModified - {{File.lastModified}}
+         </li>
+      </ul>
+
+      
