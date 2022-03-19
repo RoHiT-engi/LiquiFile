@@ -28,7 +28,8 @@ import { TableGeneratorComponent } from './Pages/table-generator/table-generator
 import { environment } from 'src/environments/environment';
 import {provideAuth, getAuth} from '@angular/fire/auth';
 
-
+import { FormsModule } from '@angular/forms';
+import { OutputScreenComponent } from './Pages/output-screen/output-screen.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,11 +41,13 @@ import {provideAuth, getAuth} from '@angular/fire/auth';
     AppInfoDialogComponent,
     AppInfoComponent,
     TableGeneratorComponent,
+    OutputScreenComponent,
   ],
   imports: [
     provideAuth(() => getAuth()),
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
     NgxFileDragDropModule,
     BrowserModule,
     AppRoutingModule,

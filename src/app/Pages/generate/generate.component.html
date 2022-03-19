@@ -13,6 +13,11 @@
           lastModified - {{File.lastModified}}
          </li>
       </ul>
+    <mat-label>QrCode Name</mat-label>
+    <br>
+    <p><input type="text" id="username" name="username" [(ngModel)]="textLabel"></p>
+    <br>
+    <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
 
     <button (click)="onSubmit()">Upload</button>
 
