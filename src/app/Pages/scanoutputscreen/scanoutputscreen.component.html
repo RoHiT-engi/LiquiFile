@@ -1,0 +1,11 @@
+<p>QrCode</p>
+<qr-code [value]="getValue()"
+         size="300"
+         errorCorrectionLevel="M"
+         centerImageSrc="undefined"
+         centerImageSize="undefined">
+</qr-code>
+
+
+<p>{{getUrls()[0]}}</p>
+<button (click)="downloadall()">download</button>

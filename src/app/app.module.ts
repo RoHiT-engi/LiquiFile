@@ -30,6 +30,7 @@ import {provideAuth, getAuth} from '@angular/fire/auth';
 import { QrCodeModule } from 'ng-qrcode';
 import { FormsModule } from '@angular/forms';
 import { OutputScreenComponent } from './Pages/output-screen/output-screen.component';
+import { ScanoutputscreenComponent } from './Pages/scanoutputscreen/scanoutputscreen.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { OutputScreenComponent } from './Pages/output-screen/output-screen.compo
     AppInfoComponent,
     TableGeneratorComponent,
     OutputScreenComponent,
+    ScanoutputscreenComponent,
   ],
   imports: [
     provideAuth(() => getAuth()),

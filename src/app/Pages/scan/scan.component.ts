@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BehaviorSubject } from 'rxjs';
 import { FormatsDialogComponent } from 'src/app/formats-dialog/formats-dialog.component';
 import { AppInfoDialogComponent } from '../../app-info-dialog/app-info-dialog.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class ScanComponent implements OnInit {
   torchAvailable$ = new BehaviorSubject<boolean>(false);
   tryHarder = false;
 
-  constructor(private readonly _dialog: MatDialog) { }
+  constructor(private readonly _dialog: MatDialog,private router:Router) { }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -52,6 +53,8 @@ export class ScanComponent implements OnInit {
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
     alert(resultString);
+    this.router.navigateByUrl('/scanoutputScreen',{state:{data:resultString}});
+
   }
 
   onDeviceSelectChange(selected: string) {
