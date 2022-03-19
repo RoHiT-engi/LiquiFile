@@ -25,6 +25,10 @@ import { NgxFileDragDropModule } from 'ngx-file-drag-drop';
 import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TableGeneratorComponent } from './Pages/table-generator/table-generator.component';
+import { environment } from 'src/environments/environment';
+import {provideAuth, getAuth} from '@angular/fire/auth';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +42,7 @@ import { TableGeneratorComponent } from './Pages/table-generator/table-generator
     TableGeneratorComponent,
   ],
   imports: [
+    provideAuth(() => getAuth()),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     NgxFileDragDropModule,
