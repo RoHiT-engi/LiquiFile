@@ -10,6 +10,7 @@ export class OutputScreenComponent implements OnInit {
 
   constructor(private router:Router) { 
     console.log("Checking Things");
+    console.log(window.history.state);
   }
   
   getSamples(){

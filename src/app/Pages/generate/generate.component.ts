@@ -79,8 +79,9 @@ export class GenerateComponent implements OnInit {
   }
 
   uploadpreparation() {
-    let UploadArray: Array<string> =[];
+    let UploadArray: String[] =[];
     let count = 0;
+    if(this.fileControl.value.length>0){
       for (let index in this.fileControl.value) {
         if(this.fileControl.value[index].size < 100000000) {
           if(this.fileControl.value[index].type != "video/*" || this.fileControl.value[index].type != "audio/*") {
@@ -100,12 +101,24 @@ export class GenerateComponent implements OnInit {
         break;
       }
   }
-  localStorage.setItem(this.textLabel.toString(), JSON.stringify(UploadArray));
-  alert("Files Uploaded Successfully");
-  this.router.navigateByUrl('/outputScreen',{state:{label:this.textLabel,files:UploadArray}});
+  alert("Plz Wait While we are uploading your files");
+  setTimeout(() => {
+    console.log(UploadArray);
+    localStorage.setItem(this.textLabel.toString(), JSON.stringify(UploadArray));
+    alert("Files Uploaded Successfully");
+    this.router.navigateByUrl('/outputScreen',{state:{label:this.textLabel,files:UploadArray}});
+  }, 10000);
+  
+  // localStorage.setItem(this.textLabel.toString(), JSON.stringify(UploadArray));
+  // alert("Files Uploaded Successfully");
+  // this.router.navigateByUrl('/outputScreen',{state:{label:this.textLabel,files:UploadArray}});
+}
+  else{
+    alert("No files selected");
+  }
 }
 
-  UploadFile(file: File,uris :Array<string>) {
+  UploadFile(file: File,uris :String[]) {
     if(firebase.auth().currentUser==null){
       console.log("user signed in "+firebase.auth().currentUser);
       alert("Plz Login with Google To Proceed Further");
