@@ -6,14 +6,11 @@ import { Component, OnInit,EventEmitter ,Output } from '@angular/core';
   styleUrls: ['./navbar.component.sass']
 })
 export class NavbarComponent implements OnInit {
-  BtnLogin = "Login"
   @Output() public sidenavToggle = new EventEmitter();
 
   constructor() { }
 
-  public onToggleSidenav = () => { 
-    this.BtnLogin = "Logout"
-  }
+
 
   ngOnInit(): void {
   }

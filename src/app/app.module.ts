@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TableGeneratorComponent } from './Pages/table-generator/table-generator.component';
 import { environment } from 'src/environments/environment';
 import {provideAuth, getAuth} from '@angular/fire/auth';
-
+import { QrCodeModule } from 'ng-qrcode';
 import { FormsModule } from '@angular/forms';
 import { OutputScreenComponent } from './Pages/output-screen/output-screen.component';
 @NgModule({
@@ -45,6 +45,7 @@ import { OutputScreenComponent } from './Pages/output-screen/output-screen.compo
   ],
   imports: [
     provideAuth(() => getAuth()),
+    QrCodeModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,

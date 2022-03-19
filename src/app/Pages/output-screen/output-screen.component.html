@@ -1,1 +1,8 @@
-<p>output-screen works!</p>
+<p>{{getQrCodeLabel()}}</p>
+
+<qr-code [value]="getSamples()"
+         size="300"
+         errorCorrectionLevel="M"
+         centerImageSrc="undefined"
+         centerImageSize="undefined">
+</qr-code>

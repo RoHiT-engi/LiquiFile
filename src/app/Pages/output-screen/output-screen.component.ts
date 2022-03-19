@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-output-screen',
@@ -7,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { 
+    console.log("Checking Things");
+  }
+  
+  getSamples(){
+    return window.history.state.files.toString();
+  }
+  getQrCodeLabel(){
+    return "QR Code";
+  }
 
+  
   ngOnInit(): void {
   }
 

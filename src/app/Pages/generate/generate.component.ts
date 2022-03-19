@@ -6,6 +6,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import 'firebase/compat/storage'; 
 // import { Auth } from "@angular/fire/auth";
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 // import * as firebase from 'firebase/app';
 @Component({
@@ -19,7 +20,7 @@ export class GenerateComponent implements OnInit {
   lastNameAutofilled!: boolean;
   textLabel : String= "";
   // uris = JSON;
-  constructor() {
+  constructor(private router:Router) {
     firebase.initializeApp(environment.firebaseConfig);
    }
   
@@ -79,19 +80,29 @@ export class GenerateComponent implements OnInit {
 
   uploadpreparation() {
     let UploadArray: Array<string> =[];
+    let count = 0;
       for (let index in this.fileControl.value) {
         if(this.fileControl.value[index].size < 100000000) {
           if(this.fileControl.value[index].type != "video/*" || this.fileControl.value[index].type != "audio/*") {
-            UploadArray = this.UploadFile(this.fileControl.value[index],UploadArray);
+            if(count!=5){
+              UploadArray = this.UploadFile(this.fileControl.value[index],UploadArray); 
+              count++;
+            }else{
+              alert("You can only upload 5 files at a time");
+              break;
+            }
           }else{
             alert("File Format not supported");
+            break;
           }
       }else{
         alert("File size is greater than 10MB");
+        break;
       }
   }
-  console.log("UploadArray :- ",UploadArray);
-  localStorage.setItem("UploadArray", JSON.stringify(UploadArray));
+  localStorage.setItem(this.textLabel.toString(), JSON.stringify(UploadArray));
+  alert("Files Uploaded Successfully");
+  this.router.navigateByUrl('/outputScreen',{state:{label:this.textLabel,files:UploadArray}});
 }
 
   UploadFile(file: File,uris :Array<string>) {
